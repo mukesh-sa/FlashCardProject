@@ -1,27 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp">
 
+    <!-- EditText for Question -->
     <EditText
-        android:id="@+id/question_field"
+        android:id="@+id/edit_text_question"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter question"/>
+        android:hint="Enter question"
+        android:inputType="text" />
 
+    <!-- EditText for Answer -->
     <EditText
-        android:id="@+id/answer_field"
+        android:id="@+id/edit_text_answer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter answer"
-        android:layout_marginTop="8dp"/>
+        android:inputType="text" />
 
+    <!-- Button to Save Flashcard -->
     <Button
-        android:id="@+id/save_button"
+        android:id="@+id/button_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"/>
+        android:text="Save Flashcard" />
+
 </LinearLayout>
