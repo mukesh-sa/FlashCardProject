@@ -1,0 +1,14 @@
+<!-- res/values/styles.xml -->
+<resources>
+
+    <!-- Custom theme for splash screen -->
+    <style name="Theme.Flashcard.Splash" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item> <!-- Background image for splash screen -->
+    </style>
+
+    <!-- Other existing themes -->
+    <style name="Theme.Flashcard" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Your main app theme settings -->
+    </style>
+
+</resources>
