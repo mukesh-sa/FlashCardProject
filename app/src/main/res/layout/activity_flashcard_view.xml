@@ -1,20 +1,39 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="#E0E0E0"> <!-- Background color for the outer container -->
 
-    <TextView
-        android:id="@+id/card_front"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Question"
-        android:textSize="24sp"/>
+    <!-- Card Container with square dimensions, rounded corners, and shadow -->
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:background="@drawable/flashcard_background"
+        android:gravity="center">
 
-    <TextView
-        android:id="@+id/card_back"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Answer"
-        android:textSize="24sp"/>
+        <!-- Front of the Card -->
+        <TextView
+            android:id="@+id/card_front"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="24dp"
+            android:text="Question"
+            android:textSize="24sp"
+            android:textColor="#ffff"
+            android:visibility="visible"/>
+
+        <!-- Back of the Card -->
+        <TextView
+            android:id="@+id/card_back"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="24dp"
+            android:text="Answer"
+            android:textSize="24sp"
+            android:textColor="#ffff"
+            android:visibility="gone"/>
+    </RelativeLayout>
 </RelativeLayout>
