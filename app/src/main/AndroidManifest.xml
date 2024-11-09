@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Flashcard"
         tools:targetApi="31">
 
-        <!-- Splash Screen Activity -->
+        <!-- Splash Screen Activity (Launcher) -->
         <activity
             android:name=".SplashActivity"
             android:label="@string/app_name"
@@ -26,15 +26,11 @@
             </intent-filter>
         </activity>
 
-        <!-- Main Activity -->
+        <!-- Main Activity (No launcher intent filter) -->
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <!-- Home Activity -->
@@ -51,20 +47,16 @@
             android:exported="true">
         </activity>
 
+        <!-- Flashcard View Activity -->
         <activity
             android:name=".FlashcardViewActivity"
-            android:label="Create Flashcard"
+            android:label="View Flashcard"
             android:exported="true">
         </activity>
 
+        <!-- Flashcard Adapter Activity (if used) -->
         <activity
             android:name=".FlashcardAdapter"
-            android:label="Create Flashcard"
-            android:exported="true">
-        </activity>
-
-        <activity
-            android:name=".Flashcard"
             android:label="Create Flashcard"
             android:exported="true">
         </activity>

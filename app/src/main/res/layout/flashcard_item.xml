@@ -1,7 +1,15 @@
-<!-- res/layout/flashcard_item.xml -->
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/flashcard_question"
+<!-- flashcard_item.xml -->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp"
-    android:textSize="18sp"/>
+    android:layout_margin="8dp"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/flashcard_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Flashcard Question"
+        android:textSize="18sp"
+        android:gravity="center" />
+</androidx.cardview.widget.CardView>

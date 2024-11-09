@@ -1,34 +1,23 @@
 package com.example.flashcard;
 
-import com.google.firebase.FirebaseApp;
-
-
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
-
-@Entity(tableName = "flashcards")
 public class Flashcard {
 
-    @PrimaryKey(autoGenerate = true)
-    private int id;
+    // Fields to store the question and answer
     private String question;
     private String answer;
 
-    // Constructor
+    // No-argument constructor (required for Firestore deserialization)
+    public Flashcard() {
+        // Firestore needs this constructor to create an instance of the object
+    }
+
+    // Constructor with parameters to initialize the flashcard
     public Flashcard(String question, String answer) {
         this.question = question;
         this.answer = answer;
     }
 
-    // Getters and Setters
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
+    // Getter and setter for question
     public String getQuestion() {
         return question;
     }
@@ -37,11 +26,21 @@ public class Flashcard {
         this.question = question;
     }
 
+    // Getter and setter for answer
     public String getAnswer() {
         return answer;
     }
 
     public void setAnswer(String answer) {
         this.answer = answer;
+    }
+
+    // Override toString method for easy display of flashcard information
+    @Override
+    public String toString() {
+        return "Flashcard{" +
+                "question='" + question + '\'' +
+                ", answer='" + answer + '\'' +
+                '}';
     }
 }
