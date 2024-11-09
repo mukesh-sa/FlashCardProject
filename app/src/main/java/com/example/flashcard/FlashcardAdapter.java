@@ -1,17 +1,16 @@
 package com.example.flashcard;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
-import com.google.firebase.FirebaseApp;
-
 import androidx.recyclerview.widget.RecyclerView;
-import java.util.List;
-import com.example.flashcard.Flashcard;
 
+import java.util.List;
 
 public class FlashcardAdapter extends RecyclerView.Adapter<FlashcardAdapter.FlashcardViewHolder> {
 
@@ -34,6 +33,17 @@ public class FlashcardAdapter extends RecyclerView.Adapter<FlashcardAdapter.Flas
     public void onBindViewHolder(@NonNull FlashcardViewHolder holder, int position) {
         Flashcard flashcard = flashcardList.get(position);
         holder.questionTextView.setText(flashcard.getQuestion());
+
+        // Set a click listener on the item
+        holder.itemView.setOnClickListener(v -> {
+            // Create an intent to navigate to the FlashcardViewActivity
+            Intent intent = new Intent(context, FlashcardViewActivity.class);
+            // Pass the flashcard question and answer as extras
+            intent.putExtra("QUESTION", flashcard.getQuestion());
+            intent.putExtra("ANSWER", flashcard.getAnswer());
+            // Start the activity
+            context.startActivity(intent);
+        });
     }
 
     @Override

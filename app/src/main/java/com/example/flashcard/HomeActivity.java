@@ -48,7 +48,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     // Method to fetch flashcards from Firestore
-    private void fetchFlashcardsFromFirestore() {
+    private void fetchFlashcardsFromFirestoree() {
         db.collection("flashcards")
                 .get()  // Get all flashcards
                 .addOnSuccessListener(queryDocumentSnapshots -> {
@@ -69,4 +69,25 @@ public class HomeActivity extends AppCompatActivity {
                     e.printStackTrace();
                 });
     }
+
+    private void fetchFlashcardsFromFirestore() {
+        db.collection("flashcards")
+                .get()  // Get all flashcards
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    if (!queryDocumentSnapshots.isEmpty()) {
+                        List<DocumentSnapshot> documents = queryDocumentSnapshots.getDocuments();
+                        flashcardList.clear(); // Clear the old list
+                        for (DocumentSnapshot document : documents) {
+                            Flashcard flashcard = document.toObject(Flashcard.class);
+                            flashcardList.add(flashcard);
+                        }
+                        adapter.notifyDataSetChanged(); // Notify the adapter that the data has changed
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    // Handle failure
+                    e.printStackTrace();
+                });
+    }
+
 }

@@ -3,6 +3,7 @@ package com.example.flashcard;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class FlashcardViewActivity extends AppCompatActivity {
@@ -19,9 +20,18 @@ public class FlashcardViewActivity extends AppCompatActivity {
         cardFront = findViewById(R.id.card_front);
         cardBack = findViewById(R.id.card_back);
 
-        cardBack.setVisibility(View.GONE); // Initially hide back
+        // Initially hide back side of the card
+        cardBack.setVisibility(View.GONE);
 
-        // Flip card on click
+        // Get the question and answer from the intent
+        String question = getIntent().getStringExtra("QUESTION");
+        String answer = getIntent().getStringExtra("ANSWER");
+
+        // Set the question and answer to the front and back of the card
+        cardFront.setText(question);
+        cardBack.setText(answer);
+
+        // Flip the card when clicked
         cardFront.setOnClickListener(view -> flipCard());
         cardBack.setOnClickListener(view -> flipCard());
     }
